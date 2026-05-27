@@ -1454,10 +1454,10 @@
         const studentListHtml = state.students.map(s => {
           const isSelected = state.selectedStudentId === s.id;
           const bgClass = isSelected ? 'bg-white shadow-md text-blue-600 border-l-4 border-blue-500' : 'hover:bg-white/60 text-gray-700 border-l-4 border-transparent';
-          const clearedCnt = s.clearedPrefs ? s.clearedPrefs.length : 0;
+          const kyuLabel = s.kyu ? `${s.kyu}級` : '無級';
           return `
             <button onclick="window.selectStudent('${s.id}')" class="p-3 text-left rounded-xl font-bold transition-all ${bgClass}">
-              ${s.name} <span class="text-xs text-gray-400 float-right mt-1">(${clearedCnt}/47)</span>
+              ${s.name} <span class="text-xs text-gray-500 float-right mt-1">${kyuLabel}</span>
             </button>
           `;
         }).join('');
